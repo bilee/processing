@@ -1,2 +1,34 @@
-rotate an image in Processing
-put image in data folder in side sketch folder
+// rotate an image in Processing
+// put image in data folder in side sketch folder
+
+PImage img;
+// boolean sketchFullScreen() {
+ // return true;
+// }
+void setup() {
+  img = loadImage ("rings-rotate-test.png");
+  //w x h
+size (1800,800);
+ // size(1880, 1000); 
+  //43inch Vizio
+// size (displayWidth, displayHeight);
+  smooth();
+}
+
+void draw() {
+  
+  background(255);
+
+  translate(width / 2, height / 2);
+  
+
+  
+  // square
+  strokeWeight(1);
+  // degrees divided by number of second marks per round
+  //float radSec = 360 / 60 * millis(); //sub with millis
+ float radSec = .001111111112 * millis();
+  rotate(radians(radSec));
+  //rect(10, 10, 50, 50);
+  translate (-360,-360);
+  image (img, 0, 0);
